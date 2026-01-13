@@ -14,7 +14,8 @@ Includes:
 - Existing EKS cluster + VPC
 
 ## tfvars example
-```region       = "us-east-1"
+```
+region       = "us-east-1"
 vpc_name     = "eks-vpc-main"
 cluster_name = "my-eks"
 ami_id       = "ami-xxxx"
@@ -23,16 +24,19 @@ app_config   = "Hello from SSM!"
 ```
 
 ## Deploy
-```terraform init
+```
+terraform init
 terraform plan
 terraform apply -auto-approve
 ```
 ## Validate
-```aws elbv2 describe-load-balancers
+```
+aws elbv2 describe-load-balancers
 aws autoscaling describe-auto-scaling-groups
 aws eks list-clusters
 ```
 
 ## Destroy
-```terraform destroy -auto-approve
+```
+terraform destroy -auto-approve
 ```
